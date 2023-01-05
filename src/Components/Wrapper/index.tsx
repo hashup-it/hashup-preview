@@ -9,7 +9,7 @@ export const Wrapper = () => {
 	const [games, setGames] = useState<IGame[]>([]);
 
 	useAsyncEffect(async () => {
-		const payload = await axios.post('http://164.90.210.31:3000/v1/tokens/polygon');
+		const payload = await axios.post('http://164.90.210.31:80/v1/tokens/polygon');
 		const data: IGame[] = payload.data;
 
 		setGames(data.filter(datum => datum.listed));
