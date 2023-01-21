@@ -1,7 +1,7 @@
 import { Button, Flex } from '@chakra-ui/react';
 import { IGame } from '../Game/types';
 import { Game } from '../Game';
-import { useHashup } from '../../lib/hashup-react-sdk';
+import { useHashup } from '@hashup-it/hashup-react-sdk';
 
 interface IPurchasable {
 	game: IGame;
@@ -13,7 +13,7 @@ export const Purchasable = ({ game }: IPurchasable) => {
 	const { buyGame } = useHashup();
 
 	const handleLicenseBuy = async () => {
-		await buyGame(game.address, LICENCES_BOUGHT);
+		await buyGame(game.address, (LICENCES_BOUGHT * 100).toString());
 	};
 
 	return (

@@ -25,7 +25,7 @@ export interface IGame {
 	gameUrl: string;
 	gamepaper: string;
 	video: string;
-	listed: true;
+	isVerified: true;
 	chain: string;
 	chainId: number;
 	minimumAge: number;
