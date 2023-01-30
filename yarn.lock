@@ -2454,10 +2454,10 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
-"@hashup-it/hashup-react-sdk@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@hashup-it/hashup-react-sdk/-/hashup-react-sdk-0.1.2.tgz#3ed5c59b3d5bda0d6c43cbb78425322f236dcf22"
-  integrity sha512-i5kysM83IE5Pr3V9wsCxzROkapJYoXfhzRfuV2sPxvOWna2VKbIWhGkb/vxBQu9xINUTXp/9sSgwTHvsFct/Vg==
+"@hashup-it/hashup-react-sdk@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@hashup-it/hashup-react-sdk/-/hashup-react-sdk-0.1.5.tgz#a05797544de7dd6b1f5103cf27c00d984d86fb48"
+  integrity sha512-sHr2uSWwq3VeYQYJPW/V3cX9jbtUvk48/ywr4UbP05SbN4tnBoKqxzaCCwL72a+7tF4eLGyObWlrrKz5DfUHiA==
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"

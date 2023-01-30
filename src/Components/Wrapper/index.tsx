@@ -9,10 +9,10 @@ export const Wrapper = () => {
 	const [games, setGames] = useState<IGame[]>([]);
 
 	useAsyncEffect(async () => {
-		const payload = await axios.get('http://localhost:80/v1/tokens/polygon');
+		const payload = await axios.post('https://open-api.hashup.it/v1/tokens/polygon');
 		const data: IGame[] = payload.data;
 
-		setGames(data.filter(datum => datum.isVerified));
+		setGames(data);
 	}, []);
 
 	return (

@@ -4,7 +4,7 @@ React-implemented HashUp store example app.
 Uses npm [@hashup-it/hashup-react-sdk](https://www.npmjs.com/package/@hashup-it/hashup-react-sdk) package to get HashUp Store functionality, paired alongside with [HashUp API](https://wiki.hashup.it/get-started/the-hashup-api) to fetch any Store's game & analytics data.
 
 User's-point-of-view flow:\
-**Fetch** licences (http://164.90.210.31:3000/v1/tokens) --> **display** licenses --> **purchase** a licence.
+**Fetch** licences (https://open-api.hashup.it:3000/v1/tokens) --> **display** licenses --> **purchase** a licence.
 
 Example use:
 ```js
@@ -14,8 +14,8 @@ function App() {
   const { buyGame } = useHashup()
   
   /** Address of license you wish to buy. 
-	  Fetched from http://164.90.210.31:3000/ OpenAPI. */
-  const licenseAddress = '0x123 ... abc'
+	  Fetched from https://open-api.hashup.it/ OpenAPI. */
+  const licenseAddress = '0x123…abc'
   
   /** Amount of licenses you wish to buy. */
   const licenseAmount = 2
