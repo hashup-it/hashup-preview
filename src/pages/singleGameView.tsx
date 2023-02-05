@@ -12,7 +12,7 @@ import Screenshots from "../Components/PanelGames/screenshots";
 import Footer from "../Components/Footer/footer";
 import {useHashup} from "@hashup-it/hashup-react-sdk";
 import {ethers} from "ethers";
-import { formatUsd } from '../utils/parser';
+import { formatUsd, trimAddress } from '../utils/parser';
 
 
 export const SingleGameView = () => {
@@ -70,7 +70,7 @@ export const SingleGameView = () => {
                             <Text textTransform='capitalize'>{game.chain}</Text>
                         </Flex>
                         <Flex justifyContent='space-between' w='100%' >
-                            <Text color='#9EAEC7'>Token</Text>
+                            <Text textTransform="uppercase" color='#9EAEC7'>Token</Text>
                             <Text textTransform='uppercase'>{game.symbol}</Text>
                         </Flex>
                     </Flex>
@@ -86,10 +86,10 @@ export const SingleGameView = () => {
                         </Flex>
                         <Flex justifyContent='space-between' w='100%' >
                             <Text color='#9EAEC7'>Developer</Text>
-                            <Text>{game.creator.slice(0,12)}...</Text>
+                            <Text>{trimAddress(game.creator)}</Text>
                         </Flex>
                         <Flex justifyContent='space-between' w='100%' >
-                            <Text color='#9EAEC7'>Community</Text>
+                            <Text textTransform="uppercase" color='#9EAEC7'>Community</Text>
                             <Text>FCON</Text>
                         </Flex>
                     </Flex>
