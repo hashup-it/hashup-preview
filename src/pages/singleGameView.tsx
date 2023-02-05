@@ -12,6 +12,7 @@ import Screenshots from "../Components/PanelGames/screenshots";
 import Footer from "../Components/Footer/footer";
 import {useHashup} from "@hashup-it/hashup-react-sdk";
 import {ethers} from "ethers";
+import { formatUsd } from '../utils/parser';
 
 
 export const SingleGameView = () => {
@@ -42,7 +43,8 @@ export const SingleGameView = () => {
             </Flex>
             <Flex p='16px 24px 32px 0px'>
                 <Box h='320px' w='100%' position='relative' alignItems='center' justifyContent='center' >
-                <Box position='relative' filter='blur(4px) brightness(0.45)' justifyContent='center' alignItems='center' backgroundImage={game.media.coverImageUrl} display='flex' h='320px' w='100%' borderRadius='5px'/>
+                <Box position='relative' clipPath='polygon(4px 4px, calc(100% - 4px) 4px, calc(100% - 4px) calc(100% - 4px), 4px calc(100% - 4px))'
+                    filter='blur(4px) brightness(0.45)' justifyContent='center' alignItems='center' backgroundImage={game.media.coverImageUrl} display='flex' h='328px' w='calc(100% + 8px)' transform="translate(-4px, -4px)" borderRadius='5px'/>
                     <Box position='absolute' h='320px' w='100%' top='0' left='0' >
                         <Flex position='absolute' h='320px' w='100%' justifyContent='center' flexDirection='column' gridGap='12px' alignItems='center'>
                             <Text fontSize='56px' fontWeight='700' color='#EFF1F6' textShadow={`4px 4px 40px ${Colors.primary}`}>{game.name}</Text>
@@ -61,7 +63,7 @@ export const SingleGameView = () => {
                         </Flex>
                         <Flex justifyContent='space-between' w='100%'>
                             <Text color='#9EAEC7'>ICO Price</Text>
-                            <Text>{game.price}</Text>
+                            <Text>{formatUsd(ethers.utils.formatUnits(game.price, 4))}</Text>
                         </Flex>
                         <Flex justifyContent='space-between' w='100%' >
                             <Text color='#9EAEC7'>Chain</Text>
