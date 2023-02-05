@@ -5,15 +5,19 @@ import { IGame, IGameToken } from './types';
 import { redirect } from '../../utils/redirector';
 import { formatUsd, squashArray } from '../../utils/parser';
 import { Cartridge } from '../Cartridge';
+import {useNavigate} from "react-router-dom";
 
 export const Game = ({ data }: { data: IGame & IGameToken }) => {
+
+	const history = useNavigate()
+
 	const today = new Date();
 	const twoWeeksBefore = new Date(today.setDate(today.getDate() - 21));
 	const createDate = new Date(data.createdAt);
 	const isNew = createDate > twoWeeksBefore;
 
 	const handleNavigate = () => {
-		redirect(`https://gamexplorer.io/game/${data.address}`);
+		const navigate = history(`/game/${data.address}`);
 	};
 
 	return (
@@ -45,9 +49,8 @@ export const Game = ({ data }: { data: IGame & IGameToken }) => {
 				</Flex>
 			)}
 			<Image
-				width="25vw"
 				height="auto"
-				src={squashArray(data.screenshots)[0] ?? ''}
+				src={data.media.banner}
 				objectFit="cover"
 				userSelect="none"
 				borderRadius="7px"

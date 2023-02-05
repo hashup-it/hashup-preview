@@ -22,7 +22,6 @@ export const Purchasable = ({ game }: IPurchasable) => {
 			gap="16px"
 		>
 			<Game data={game} />
-			<Button onClick={handleLicenseBuy}>Buy Now</Button>
 		</Flex>
 	);
 };

@@ -1,3 +1,34 @@
+import {ethers} from "ethers";
+
+export const emptyGame: IGame = {
+	address: ethers.constants.AddressZero,
+	color: '',
+	chain: "",
+	chainId: 0,
+	minimumAge: 0,
+	colors: { actionColor: '', backgroundColor: '', textColor: '' },
+	createdAt: '',
+	description: '',
+	gameUrl: '',
+	gamepaper: '',
+	isVerified: false,
+	media: { cover:'', icon: '', banner: '', coverImageUrl: '', logoUrl: '' },
+	name: '',
+	price: '0',
+	screenshots: [],
+	socials: { discord: '', facebook: '', twitter: '', youtube: '' },
+	symbol: '',
+	updatedAt: '',
+	video: '',
+	genres: [],
+	platforms: [],
+	totalSupply: '',
+	creator: '',
+	creatorFee: '',
+	marketplaceFee: ''
+};
+
+
 export interface IGame {
 	colors: {
 		actionColor: string;
@@ -10,6 +41,13 @@ export interface IGame {
 		youtube: string;
 		discord: string;
 	};
+	media: {
+		cover: string;
+		logoUrl: string;
+		banner: string;
+		icon: string;
+		coverImageUrl: string;
+	},
 	screenshots: string[];
 	genres: string[];
 	platforms: string[];
@@ -25,12 +63,13 @@ export interface IGame {
 	gameUrl: string;
 	gamepaper: string;
 	video: string;
-	isVerified: true;
+	isVerified: boolean;
 	chain: string;
 	chainId: number;
 	minimumAge: number;
 	createdAt: string;
 	updatedAt: string;
+	marketplaceFee: string,
 }
 
 export interface IGameToken {
