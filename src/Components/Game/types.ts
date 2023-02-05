@@ -43,10 +43,10 @@ export interface IGame {
 	};
 	media: {
 		cover: string;
-		logoUrl: string;
-		banner: string;
+		logoUrl: string /** used */;
+		banner: string /** used */;
 		icon: string;
-		coverImageUrl: string;
+		coverImageUrl: string /** used */;
 	},
 	screenshots: string[];
 	genres: string[];

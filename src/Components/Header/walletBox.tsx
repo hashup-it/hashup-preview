@@ -17,9 +17,9 @@ export const WalletBox = ({user, setUser}: {user: string, setUser: React.Dispatc
 
 
     return (
-      <Flex cursor='pointer' onClick={handleConnect} bgColor={Colors.secondary} alignItems='center' justifyContent='center' h='48px' borderRadius='5px' gridGap='10px' paddingX='10px' border='1px solid rgba(255, 255, 255, 0.05)'>
+      <Flex cursor={user ? 'unset' : 'pointer'} onClick={handleConnect} bgColor={Colors.secondary} alignItems='center' justifyContent='center' h='48px' borderRadius='5px' gridGap='10px' paddingX='10px' border='1px solid rgba(255, 255, 255, 0.05)'>
           <WalletIcon />
-          {user ? (<Flex alignItems='center'> <Text fontSize='15px'>{trimAddress(user)}</Text> <ChevronDown/> </Flex> ) : <Text fontSize='15px'>Connect wallet</Text>}
+          {user ? (<Flex alignItems='center' gap="8px"> <Text fontSize='15px'>{trimAddress(user)}</Text> <ChevronDown/> </Flex> ) : <Text fontSize='15px'>Connect wallet</Text>}
       </Flex>
     );
 };

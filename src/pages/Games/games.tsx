@@ -7,13 +7,10 @@ import AllGames from "../../Components/AllGames/allGames";
 import Footer from "../../Components/Footer/footer";
 import axios from "axios";
 
-const data = ['All', 'Adventure', 'NFT', 'Metaverse', 'Moba', 'Strategy', 'RPG', 'Multiplayer']
+const data = ['All', 'Adventure', 'RPG', 'Strategy', 'NFT', 'Metaverse', 'Moba', 'Multiplayer']
 
-export const Games = () => {
-
+export const Games = ({search}: {search: string}) => {
     const [category, setCategory] = useState('All')
-
-    console.log('kategoria to', category)
 
     return (
        <Flex w='100%' p='42px 24px' flexDirection='column' bgColor={Colors.primary}>
@@ -25,13 +22,13 @@ export const Games = () => {
            </Flex>
            <Flex w='100%' justifyContent='space-between' pt='46px'>
                 <Text fontSize='28px' fontWeight='700'>Games</Text>
-               <Flex p='12px 40px' justifyContent='center' alignItems='center' gridGap='10px' bgColor='#222B52' borderRadius='5px' border='1px solid #2F385D'>
+               <Flex cursor="pointer" p='12px 40px' justifyContent='center' alignItems='center' gridGap='10px' bgColor='#222B52' borderRadius='5px' border='1px solid #2F385D'>
                    <Text>Filter</Text>
                    <FilterIcon />
                </Flex>
            </Flex>
            <Flex pt='38px'>
-              <AllGames category={category}/>
+              <AllGames search={search} category={category}/>
            </Flex>
            <Footer />
        </Flex>

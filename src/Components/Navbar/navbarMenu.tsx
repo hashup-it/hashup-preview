@@ -11,7 +11,6 @@ export interface INavbarMenu {
 }
 
 export const NavbarMenu = ({icon, text, isActive, path} : INavbarMenu) => {
-
     const history = useNavigate()
     const navigate = () => {
         history(path)

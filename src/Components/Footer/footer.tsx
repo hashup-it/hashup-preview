@@ -6,8 +6,11 @@ import TelegramIcon from "../../Icons/telegramIcon";
 import DiscordIcon from "../../Icons/discordIcon";
 import TwitterIcon from "../../Icons/twitterIcon";
 import MediumIcon from "../../Icons/mediumIcon";
+import { redirect } from '../../utils/redirector';
 
 export const Footer = () => {
+    const data = ['home', 'about', 'tokenomics', 'roadmap', 'whitepaper']
+
     return (
         <Flex bgColor={Colors.primary} w='100%' p='120px 0px 64px 96px'>
             <Flex gridGap='128px' justifyContent='space-between' w='60%' alignItems='flex-start'>
@@ -25,11 +28,7 @@ export const Footer = () => {
                 </Flex>
 
                     <Flex flexDirection='column' gridGap='32px' fontSize='14px'>
-                        <Text>Home</Text>
-                        <Text>About</Text>
-                        <Text>Tokenomics</Text>
-                        <Text>Roadmap</Text>
-                        <Text>Whitepaper</Text>
+                        {data.map((datum) => <Text cursor="pointer" textTransform="capitalize" onClick={() => redirect('https://www.gamer-hub.io/')}>{datum}</Text>)}
                     </Flex>
             </Flex>
         </Flex>

@@ -7,7 +7,7 @@ export const UserProfile = () => {
     const {isOpen, onOpen, onClose} = useDisclosure()
 
     return (
-        <Flex h='72px' w='273px' border='1px solid #0F204C' p='20px 22px 10px 22px' gridGap='16px'
+        <Flex cursor='pointer' onClick={onOpen} h='72px' w='273px' border='1px solid #0F204C' p='20px 22px 10px 22px' gridGap='16px'
               alignItems='flex-start'>
             <Flex justifyContent='space-between' w='100%'>
                 <Flex>
@@ -20,19 +20,19 @@ export const UserProfile = () => {
                     </Flex>
                 </Flex>
                 <Flex alignItems='center'>
-                    <Box onClick={onOpen} cursor='pointer' position='relative'>
+                    <Box position='relative'>
                         <Box display='flex' w='24px' h='24px'>
                         <ChevronDown/>
                         </Box>
                             <Modal isOpen={isOpen} onClose={onClose}>
-                                <ModalContent position='absolute' right='40px' w='269px' h='120px' bgColor='transparent' border='1px solid #FFFFFF15'
+                                <ModalContent  userSelect="none" position='absolute' right='40px' w='269px' h='120px' bgColor='transparent' border='1px solid #FFFFFF15'
                                               borderRadius='5px'>
                                     <Flex alignItems='center' backdropFilter='blur(24px)' w='100%' h='100%' p='16px 8px'
                                           border='1px solid #FFFFFF15' borderRadius='5px'>
                                         <Flex flexDirection='column' gridGap='12px' w='100%'>
-                                            <Text>Profile</Text>
+                                            <Text cursor="pointer">Profile</Text>
                                             <Box bgColor='#FFFFFF15' w='100%' h='1px'/>
-                                            <Text>Sign Out</Text>
+                                            <Text cursor="pointer">Sign Out</Text>
                                         </Flex>
                                     </Flex>
                                 </ModalContent>
