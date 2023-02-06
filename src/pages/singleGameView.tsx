@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Flex, Text, Box} from "@chakra-ui/react";
+import { Flex, Text, Box, createStandaloneToast } from '@chakra-ui/react';
 import {Colors} from "../colors";
 import BackArrows from "../Icons/backArrows";
 import {useNavigate, useParams} from "react-router-dom";
@@ -20,6 +20,7 @@ export const SingleGameView = () => {
     const hashup = useHashup();
 
     const { id } = useParams();
+    const { toast } = createStandaloneToast();
 
     const [game, setGame] = useState<IGame>(emptyGame);
 
@@ -34,6 +35,14 @@ export const SingleGameView = () => {
     const navigate = () => {
         history('/games')
     }
+
+    const handleBuyGame = async () => {
+		const result = await hashup.buyGame(id ?? ethers.constants.AddressZero);
+        if (result === 'execution reverted: ERC20: transfer amount exceeds balance') {
+            toast({ title: 'Not enough USDC left on this wallet', status: 'error' });
+        }
+	};
+
     return (
 
         <Flex bgColor={Colors.primary} p='40px 0px 0px 24px' flexDirection='column'>
@@ -94,7 +103,7 @@ export const SingleGameView = () => {
                         </Flex>
                     </Flex>
                     <Flex pt='32px' w='100%' gridGap='16px'>
-                        <Flex userSelect="none" cursor='pointer' onClick={() => hashup.buyGame(id?? ethers.constants.AddressZero)} h='56px' w='309px' alignItems='center' justifyContent='center' bgColor='#260C40' borderRadius='5px' border='1px solid #5A0852'>
+                        <Flex userSelect="none" cursor='pointer' onClick={handleBuyGame} h='56px' w='309px' alignItems='center' justifyContent='center' bgColor='#260C40' borderRadius='5px' border='1px solid #5A0852'>
                             Buy Game
                         </Flex>
                         <Flex cursor="not-allowed" h='56px' w='56px' borderRadius='5px' border='1px solid #white' bgColor='#1E1B46' stroke='1px solid #4A6082' alignItems='center' justifyContent='center'>
