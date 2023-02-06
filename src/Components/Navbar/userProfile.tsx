@@ -30,9 +30,9 @@ export const UserProfile = () => {
                                     <Flex alignItems='center' backdropFilter='blur(24px)' w='100%' h='100%' p='16px 8px'
                                           border='1px solid #FFFFFF15' borderRadius='5px'>
                                         <Flex flexDirection='column' gridGap='12px' w='100%'>
-                                            <Text cursor="pointer">Profile</Text>
+                                            <Text pl="16px" cursor="not-allowed">Profile</Text>
                                             <Box bgColor='#FFFFFF15' w='100%' h='1px'/>
-                                            <Text cursor="pointer">Sign Out</Text>
+                                            <Text pl="16px" cursor="pointer">Sign Out</Text>
                                         </Flex>
                                     </Flex>
                                 </ModalContent>
