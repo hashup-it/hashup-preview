@@ -25,7 +25,7 @@ export const UserProfile = () => {
                         <ChevronDown/>
                         </Box>
                             <Modal isOpen={isOpen} onClose={onClose}>
-                                <ModalContent  userSelect="none" position='absolute' right='40px' w='269px' h='120px' bgColor='transparent' border='1px solid #FFFFFF15'
+                                <ModalContent userSelect="none" position='absolute' right='40px' w='269px' h='120px' bgColor='transparent' border='1px solid #FFFFFF15'
                                               borderRadius='5px'>
                                     <Flex alignItems='center' backdropFilter='blur(24px)' w='100%' h='100%' p='16px 8px'
                                           border='1px solid #FFFFFF15' borderRadius='5px'>
