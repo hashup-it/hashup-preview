@@ -103,7 +103,8 @@ export const Screenshots = ({ screens, video, arrowsColor }: IImagesCarousel) =>
                     userSelect: 'none',
                 },
                 '.thumbs.animated': {
-                    maxWidth: '700px',
+                    userSelect: 'none',
+                    maxWidth: '608px',
                 },
                 '.thumb': {
                     border: '3px solid #333',
